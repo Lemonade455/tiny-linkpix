@@ -6,7 +6,7 @@ services:
     image: lemonade455/tiny-linkpix:latest
     container_name: tiny-linkpix
     ports:
-      - "8080:3000"
+      - "5080:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
