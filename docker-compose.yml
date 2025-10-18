@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  tiny-linkpix:
+    build: .
+    image: lemonade455/tiny-linkpix:latest
+    container_name: tiny-linkpix
+    ports:
+      - "8080:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - BASE_URL=https://example.com
+      - UPLOAD_TOKEN=superhemligt-token
+      - MAX_FILE_MB=25
+      - ALLOWED_MIME=image/jpeg,image/png,image/webp,image/gif
+      - RATE_WINDOW_MIN=1
+      - RATE_MAX=60
+      - SQLITE_PATH=/data/db.sqlite
+      - DATA_DIR=/data/uploads
+      - SLUG_REGEX=^[a-z0-9-]{3,64}$
+    volumes:
+      - ./data:/data
+    restart: unless-stopped

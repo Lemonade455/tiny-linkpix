@@ -1,6 +1,3 @@
-# tiny-linkpix
-Self-hosted image uploader with custom share links (Tiny-LinkPix)
-
 # Tiny-LinkPix
 
 En lätt, självhostad bilduppladdare med **egna URL-sluggar**  
