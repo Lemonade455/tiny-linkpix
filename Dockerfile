@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Install dependencies first for better caching
 COPY package.json package-lock.json* ./
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 # Copy source
 COPY server.js db.js README.md ./
@@ -20,3 +20,5 @@ USER app
 
 EXPOSE 3000
 CMD ["node", "server.js"]
+
+Switch to npm install instead of npm ci (no lock file needed)
