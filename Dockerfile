@@ -21,4 +21,3 @@ USER app
 EXPOSE 3000
 CMD ["node", "server.js"]
 
-Switch to npm install instead of npm ci (no lock file needed)
