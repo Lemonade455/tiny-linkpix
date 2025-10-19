@@ -15,7 +15,12 @@ COPY public ./public
 
 # Non-root user
 RUN addgroup -S app && adduser -S app -G app
-RUN mkdir -p /data/uploads && chown -R app:app /data
+
+# Create data directories with proper permissions
+RUN mkdir -p /data/uploads && \
+    chown -R app:app /data && \
+    chmod -R 775 /data
+
 USER app
 
 EXPOSE 3000
